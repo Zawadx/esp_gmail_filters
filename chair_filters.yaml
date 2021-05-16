@@ -1,0 +1,303 @@
+# Chair
+- to:
+    any:
+        - esp-chair@mit.edu
+        - esp-chairs@mit.edu
+  label: ESP/Chair
+
+# Programs
+# programs/director
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+    - esp-spring
+  rule:
+    to:
+      any:
+        - "{item}-director@mit.edu"
+        - "{item}-directors@mit.edu"
+    label: ESP/Levels/aDirector
+
+# programs/admin
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+    - esp-spring
+  rule:
+    to:
+        - "{item}-admin@mit.edu"
+    label: ESP/Levels/Admin
+- to: 
+    any:
+      - esp-actives@mit.edu
+  label: ESP/Levels/Admin
+
+# programs/Subdirector
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+  rule:
+    to:
+      any:
+        - "{item}-admin-binder@mit.edu"
+        - "{item}-minors@mit.edu"
+        - "{item}-class-changes@mit.edu"
+        - "{item}-class-supplies@mit.edu"
+        - "{item}-email-czar@mit.edu"
+        - "{item}-help-desk@mit.edu"
+        - "{item}-helpdesk@mit.edu"
+        - "{item}-large-classes@mit.edu"
+        - "{item}-morning-check-in@mit.edu"
+        - "{item}-morning-checkin@mit.edu"
+        - "{item}-online-logistics@mit.edu"
+        - "{item}-parents-program@mit.edu"
+        - "{item}-printables@mit.edu"
+        - "{item}-security@mit.edu"
+        - "{item}-security-director@mit.edu"
+        - "{item}-security-volunteers@mit.edu"
+        - "{item}-subdirectors@mit.edu"
+        - "{item}-student-food@mit.edu"
+        - "{item}-teacher-food@mit.edu"
+        - "{item}-teacher-checkin@mit.edu"
+        - "{item}-walk-ins@mit.edu"
+        - "{item}-walkins@mit.edu"
+        - "{item}-lecture-series@mit.edu"
+        - "{item}-signs@mit.edu"
+    label: ESP/Levels/Subdirector
+    archive: true
+
+# programs/zExternal
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+  rule:
+    to:
+      any:
+        - "{item}@mit.edu"
+        - "{item}-legal@mit.edu"
+        - "{item}-receipts@mit.edu"
+        - "{item}-reply@mit.edu"
+        - "{item}-checkin@mit.edu"
+    label: ESP/Levels/zExternal
+    archive: true
+- to:
+    any:
+        - esp-amazon@mit.edu
+        - esp-blog@mit.edu
+        - esp-web@mit.edu
+        - esp-voicemail@mit.edu
+        - esp-usps@mit.edu
+        - espider-contact@mit.edu
+  label: ESP/Levels/zExternal
+  archive: true
+- has: http://esp-mail.mit.edu
+  label: ESP/Levels/zExternal
+  archive: true
+
+# programs/spam
+- to:
+    any:
+        - dmarc@esp.mit.edu
+  label: ESP/Levels/zSpam
+  archive: true
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+  rule:
+    to:
+      any:
+        - "{item}-class-registrations@mit.edu"
+        - "{item}-finaid@mit.edu"
+    label: ESP/Levels/zSpam
+    archive: true
+- from: dse_na2@docusign.net
+  label: ESP/Levels/zSpam
+  archive: true
+
+
+# programslist
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+    - esp-spring
+  rule: 
+    to:
+      any: 
+        - "{item}-director@mit.edu"  # director
+        - "{item}-directors@mit.edu"
+        - "{item}-admin@mit.edu"  # admin
+        - "{item}-admin-binder@mit.edu"  # subdirector
+        - "{item}-legal@mit.edu"
+        - "{item}-minors@mit.edu"
+        - "{item}-class-changes@mit.edu"
+        - "{item}-class-supplies@mit.edu"
+        - "{item}-email-czar@mit.edu"
+        - "{item}-help-desk@mit.edu"
+        - "{item}-helpdesk@mit.edu"
+        - "{item}-large-classes@mit.edu"
+        - "{item}-morning-check-in@mit.edu"
+        - "{item}-morning-checkin@mit.edu"
+        - "{item}-online-logistics@mit.edu"
+        - "{item}-parents-program@mit.edu"
+        - "{item}-printables@mit.edu"
+        - "{item}-security@mit.edu"
+        - "{item}-security-director@mit.edu"
+        - "{item}-security-volunteers@mit.edu"
+        - "{item}-subdirectors@mit.edu"
+        - "{item}-student-food@mit.edu"
+        - "{item}-teacher-food@mit.edu"
+        - "{item}-teacher-checkin@mit.edu"
+        - "{item}-walk-ins@mit.edu"
+        - "{item}-walkins@mit.edu"
+        - "{item}-lecture-series@mit.edu"
+        - "{item}-signs@mit.edu"
+        - "{item}@mit.edu"  # external
+        - "{item}-legal@mit.edu"
+        - "{item}-receipts@mit.edu"
+        - "{item}-reply@mit.edu"
+        - "{item}-checkin@mit.edu"
+    label: "ESP/Programs/{item}"
+
+# MIT-facing programs
+- to:
+    any:
+      - esp-firehose@mit.edu
+      - esp-firestorm@mit.edu
+      - firehose-director@mit.edu
+      - firehose-directors@mit.edu
+      - firehose-teachers@mit.edu
+      - firesplark@mit.edu
+      - firesplark-admin@mit.edu
+      - firestorm@mit.edu
+      - firestorm-director@mit.edu
+      - firestorm-teachers@mit.edu
+      - splash-for-mit@mit.edu
+      - splash-for-mit-director@mit.edu
+      - splash-for-us@mit.edu
+      - splash-for-us-teachers@mit.edu
+  label: "ESP/Levels/MIT facing"
+  archive: true
+
+# officer label 
+- to:
+    any:
+    - esp-art-director@mit.edu
+    - esp-community-wg-director@mit.edu
+    - data-czar@mit.edu
+    - data-czars@mit.edu
+    - esp-deirector@mit.edu 
+    - esp-dotr@mit.edu 
+    - esp-timelord@mit.edu
+    - esp-historian@mit.edu
+    - esp-historians@mit.edu
+    - espider-director@mit.edu
+    - lu-rep@mit.edu
+    - esp-publicity-director@mit.edu
+    - esp-publicity-directors@mit.edu
+    - esp-secretary@mit.edu
+    - esp-treasury@mit.edu
+    - esp-treasurer@mit.edu
+    - esp-treasurers@mit.edu
+    - esp-head-webmin@mit.edu
+    - esp-frosh-czar@mit.edu
+    - frosh-czar@mit.edu
+    - money-and-stuff@mit.edu
+    - esp-office-manager@mit.edu
+  label: ESP/Levels/Officers
+  archive: true
+
+# wg label
+- to:
+    any:
+    - esp-art@mit.edu
+    - esp-community-wg@mit.edu
+    - esp-data@mit.edu
+    - esp-dei-wg@mit.edu
+    - esp-teaching-resources@mit.edu
+    - esp-dotr-discuss@mit.edu
+    - espider@mit.edu
+    - espider-contact@mit.edu
+    - esp-publicity@mit.edu
+    - esp-webmaster@mit.edu
+    - esp-webmasters@mit.edu
+    - esp-entropy@mit.edu
+    - esp-likes-fronting@mit.edu
+  label: ESP/Levels/oWorking-Group
+  archive: true
+
+# specific officerships
+- for_each:
+    - [esp-art-director@mit.edu, Art]
+    - [esp-art@mit.edu, Art]
+    - [esp-community-wg-director@mit.edu, CWG]
+    - [esp-community-wg@mit.edu, CWG]
+    - [data-czar@mit.edu, Data]
+    - [data-czars@mit.edu, Data]
+    - [esp-data@mit.edu, Data]
+    - [esp-deirector@mit.edu, DEI] 
+    - [esp-dei-wg@mit.edu, DEI]
+    - [esp-dotr@mit.edu, DoTR]
+    - [esp-teaching-resources@mit.edu, DoTR]
+    - [esp-dotr-discuss@mit.edu, DoTR]
+    - [esp-timelord@mit.edu, Historian]
+    - [esp-historians@mit.edu, Historian]
+    - [esp-historian@mit.edu, Historian]
+    - [espider-director@mit.edu, ESPider]
+    - [espider@mit.edu, ESPider]
+    - [espider-contact@mit.edu, ESPider]
+    - [lu-rep@mit.edu, LU]
+    - [esp-publicity-director@mit.edu, Publicity]
+    - [esp-publicity-directors@mit.edu, Publicity]
+    - [esp-publicity@mit.edu, Publicity] 
+    - [esp-secretary@mit.edu, Secretary]
+    - [esp-treasury@mit.edu, Treasury]
+    - [esp-treasurer@mit.edu, Treasury]
+    - [esp-treasurers@mit.edu, Treasury]
+    - [esp-head-webmin@mit.edu, Webmin]
+    - [esp-webmaster@mit.edu, Webmin]
+    - [esp-webmasters@mit.edu, Webmin]
+    - [esp-frosh-czar@mit.edu, Frosh Czar]
+    - [frosh-czar@mit.edu, Frosh Czar]
+    - [esp-entropy@mit.edu, Entropy]
+    - [esp-office-manager@mit.edu, Entropy]
+  rule:
+    to: "{item[0]}"
+    label: "ESP/Officerships/{item[1]}"
+
+# Misc
+- to:
+    any:
+      - esphun@mit.edu
+      - esphamily@mit.edu
+      - npa@mit.edu
+      - nfa@mit.edu
+      - nutso@mit.edu
+      - nutso-flaming-admins@mit.edu
+      - nutso-flaming-treasurers@mit.edu
+      - nutso-productive-admins@mit.edu
+      - nutso-productive-chairs@mit.edu
+  label: "ESP/zMisc"

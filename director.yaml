@@ -1,0 +1,165 @@
+
+# This yaml is written for splash. For a different program, edit the 3 places
+# where it says "REPLACE WITH YOUR PROGRAM"
+
+# Your 
+
+# This is only a starting point. Edit around and find what works for you!!
+
+
+# Director emails. Want these in your inbox, prolly urgent.
+- for_each:
+    - splash  # REPLACE WITH YOUR PROGRAM
+  rule:
+    to:
+      any:
+        - "{item}-director@mit.edu"
+        - "{item}-directors@mit.edu"
+    label: ESP/Levels/aDirector
+
+# Admin emails. You probably get them for all programs.
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+  rule:
+    to:
+        - "{item}-admin@mit.edu"
+    label: ESP/Levels/Admin
+- to: esp-actives@mit.edu
+  label: ESP/Levels/Admin
+
+# Subdirector emails. For you to bump occasionally.
+- for_each:
+    - splash  # REPLACE WITH YOUR PROGRAM
+  rule:
+    to:
+      any:
+        - "{item}-admin-binder@mit.edu"
+        - "{item}-minors@mit.edu"
+        - "{item}-class-changes@mit.edu"
+        - "{item}-class-supplies@mit.edu"
+        - "{item}-email-czar@mit.edu"
+        - "{item}-help-desk@mit.edu"
+        - "{item}-helpdesk@mit.edu"
+        - "{item}-large-classes@mit.edu"
+        - "{item}-morning-check-in@mit.edu"
+        - "{item}-morning-checkin@mit.edu"
+        - "{item}-online-logistics@mit.edu"
+        - "{item}-parents-program@mit.edu"
+        - "{item}-printables@mit.edu"
+        - "{item}-security@mit.edu"
+        - "{item}-security-director@mit.edu"
+        - "{item}-security-volunteers@mit.edu"
+        - "{item}-subdirectors@mit.edu"
+        - "{item}-student-food@mit.edu"
+        - "{item}-teacher-food@mit.edu"
+        - "{item}-teacher-checkin@mit.edu"
+        - "{item}-walk-ins@mit.edu"
+        - "{item}-walkins@mit.edu"
+        - "{item}-lecture-series@mit.edu"
+        - "{item}-signs@mit.edu"
+    label: ESP/Levels/Subdirector
+    archive: true
+
+# External emails. Keep an eye on them, but don't fret too much.
+- for_each:
+    - esp
+    - splash  # REPLACE WITH YOUR PROGRAM
+  rule:
+    to:
+      any:
+        - "{item}@mit.edu"
+        - "{item}-legal@mit.edu"
+        - "{item}-receipts@mit.edu"
+        - "{item}-reply@mit.edu"
+        - "{item}-checkin@mit.edu"
+    label: ESP/Levels/zExternal
+    archive: true
+- to:
+    any:
+        - esp-amazon@mit.edu
+        - esp-blog@mit.edu
+        - esp-web@mit.edu
+        - esp-voicemail@mit.edu
+        - esp-usps@mit.edu
+        - espider-contact@mit.edu
+  label: ESP/Levels/zExternal
+  archive: true
+- has: http://esp-mail.mit.edu
+  label: ESP/Levels/zExternal
+  archive: true
+
+# Spam emails you don't need to look at.
+- to:
+    any:
+        - dmarc@esp.mit.edu
+  label: ESP/Levels/zSpam
+  archive: true
+- for_each:
+    - esp
+    - splash
+    - spark
+    - cascade
+    - spring-hssp
+    - summer-hssp
+  rule:
+    to:
+      any:
+        - "{item}-class-registrations@mit.edu"
+        - "{item}-finaid@mit.edu"
+    label: ESP/Levels/zSpam
+    archive: true
+- from: dse_na2@docusign.net
+  label: ESP/Levels/zSpam
+  archive: true
+
+# Working Groups you might be a part of.
+- to:
+    any:
+    - esp-art@mit.edu
+    - esp-community-wg@mit.edu
+    - esp-data@mit.edu
+    - esp-dei-wg@mit.edu
+    - esp-teaching-resources@mit.edu
+    - esp-dotr-discuss@mit.edu
+    - espider@mit.edu
+    - espider-contact@mit.edu
+    - esp-publicity@mit.edu
+    - esp-webmaster@mit.edu
+    - esp-webmasters@mit.edu
+    - esp-entropy@mit.edu
+    - esp-likes-fronting@mit.edu
+  label: ESP/Levels/oWorking-Group
+  archive: true
+
+
+# Misc
+- to:
+    any:
+      - esphun@mit.edu
+      - esphamily@mit.edu
+      - npa@mit.edu
+      - nfa@mit.edu
+      - nutso@mit.edu
+      - nutso-flaming-admins@mit.edu
+      - nutso-flaming-treasurers@mit.edu
+      - nutso-productive-admins@mit.edu
+      - nutso-productive-chairs@mit.edu
+  label: "ESP/Levels/zMisc"
+
+
+
+# Unresolved. Put last (or make a seperate doc) so that the filters above catch
+# everything you need here.
+- labeled:
+    any:
+      - ESP/Levels/aDirector
+      - ESP/Levels/Admin
+      - ESP/Levels/Subdirector
+      - ESP/Levels/oWorking-Group
+      - ESP/Levels/zExternal
+  label: ESP/aUnresolved

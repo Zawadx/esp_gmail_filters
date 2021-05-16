@@ -1,0 +1,17 @@
+# unresolved
+- labeled:
+    any:
+      - ESP/Chair
+      - ESP/Levels/aDirector
+      - ESP/Levels/Admin
+      - ESP/Levels/MIT facing
+      - ESP/Levels/Subdirector
+      - ESP/Levels/Officers
+      - ESP/Levels/oWorking-Group
+  label: ESP/Internal Unresolved
+
+- labeled:
+    any:
+      - ESP/Levels/zExternal
+  label: ESP/External Unresolved
+  archive: true

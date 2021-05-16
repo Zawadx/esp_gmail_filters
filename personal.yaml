@@ -1,0 +1,67 @@
+# dormcon
+
+- to:
+    any:
+      - ask-scuffy@mit.edu
+      - dormcon-cpw-chairs
+      - dormcon-exec
+      - dormcon-rex-chairs
+      - dormcon-rexvp
+      - dorms-cpw
+      - dorms-prez
+      - dorms-rex
+  label: dormcon
+
+# urop
+
+- from:
+    any:
+      - evelina9@mit.edu
+      - annaiv@mit.edu
+  label: "!UROP stuff"
+- to: tevlab-urops@mit.edu
+  label: "!UROP stuff"
+
+# floorspam
+
+- to:
+    any:
+      - 1e-discuss
+      - 4e
+      - black-hole
+      - black-hole-saga
+      - black-hole-singularity
+      - informed-slugs
+      - salt
+  label: mit/floorspam
+
+# ec-discuss
+- to:
+    any:
+      - ec-discuss
+      - i-have-a-personal-problem
+      - im-having-a-personal-problem@mit.edu
+  label: mit/ec-discuss
+  archive: true
+
+# dormspam
+- has:
+    any:
+      - bcc dorms
+      - "bc-talk"
+  label: mit/dormspam
+  archive: true
+
+# free stuff
+- to:
+    any:
+      - reuse
+      - free-foods
+      - vultures
+  label: mit/free stuff
+  archive: true
+
+# math major
+- to: mm23@math.mit.edu
+  label: mit/math-major
+  archive: true
